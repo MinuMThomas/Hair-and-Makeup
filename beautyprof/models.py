@@ -6,7 +6,7 @@ from django.utils.text import slugify
 
 
 class Profile(models.Model):
-    first_name = models.CharField(max_length=200, blank=True)
+    name = models.CharField(max_length=200, blank=True)
     profession = models.CharField(max_length=200, blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(default="add about your work and contact", max_length=300)

@@ -1,6 +1,6 @@
 from django.urls import path
-from beautyprof.views import ProfileListView
+from . import views
 
 urlpatterns = [
-    path('', ProfileListView.as_view(), name='home'),
+    path('', views.ProfileListView.as_view(), name='home'),
 ]
