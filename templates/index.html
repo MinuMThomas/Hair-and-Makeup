@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="row">
 
-        <!-- Blog Entries Column -->
+        <!-- Profile Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for profile in profile_list %}
@@ -15,7 +15,7 @@
                             <div class="image-container">
                                 {% if "placeholder" in profile.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="">
+                                    src="https://res.cloudinary.com/mycodestudies/image/upload/v1681492418/beautician_img1_vqvgko.jpg">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ profile.featured_image.url }}">
                                 {% endif %}
@@ -23,7 +23,14 @@
                                     <p class="author">User: {{ profile.user }}</p>
                                 </div>
                             </div>
-                        
+                            <a href="" class="post-link">
+                                <h2 class="card-title">{{ profile.name }}</h2>
+                                <p class="card-text">{{ profile.excerpt }}</p>
+                            </a>
+                            <hr />
+                            <p class="card-text text-muted h6">{{ profile.created_on}}</p>
+
+
                         </div>
                     </div>
                 </div>
@@ -36,6 +43,7 @@
             </div>
         </div>
     </div>
+    <!-- pagination -->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
