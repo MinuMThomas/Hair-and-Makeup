@@ -13,3 +13,17 @@ class ProfileListView(generic.ListView):
     queryset = Profile.objects.order_by('created')
     template_name = "index.html"
     paginate_by = 6
+
+
+class ProfileDetail(View):
+
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Profile.objects.order_by('updated')
+        profile = get_object_or_404(queryset, slug=slug)
+
+        return render(
+            request,
+            "prof_detail.html",
+            {
+                "profile": profile,
+            })
