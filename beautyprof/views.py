@@ -15,15 +15,19 @@ class ProfileListView(generic.ListView):
     paginate_by = 6
 
 
-class ProfileDetail(View):
+class  ProfileDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Profile.objects.order_by('updated')
         profile = get_object_or_404(queryset, slug=slug)
+        reviews = profile.reviews.filter(approved=True).order_by('created_on')
 
         return render(
             request,
             "prof_detail.html",
             {
-                "profile": profile,
-            })
+            "profile": profile,
+            "reviews": reviews,
+            }
+    )
+

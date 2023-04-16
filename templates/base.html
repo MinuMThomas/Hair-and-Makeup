@@ -42,31 +42,30 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                        <a class="nav-link" href="{% url 'account_signup' %}">Create Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link" href="{% url 'account_login' %}">Sign In</a>
                     </li>
                     {% endif %}
 
                 </ul>
                 <span class="navbar-text text-muted">
-                   if you are a freelance hairdresser or beutician please register to get a profile
+                    beautician at your convenience
                 </span>
             </div>
         </div>
     </nav>
  <!-- Hero image -->
- 
- <img src="{% static 'image/hair-dresser.jpeg' %}" class="img-fluid" alt="cartoon image of hairdresser" >
+ <!-- <img src="{% static 'images/hair-dresser' %}" class="img-fluid" alt="cartoon image of hairdresser" > -->
     
 
 
-    <!-- <div class="container">
+    <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 {% for message in messages %}
@@ -77,7 +76,7 @@
                 {% endfor %}
             </div>
         </div>
-    </div> -->
+    </div>
 
     <main class="flex-shrink-0 main-bg">
 
