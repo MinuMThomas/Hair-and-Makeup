@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 # from django.views import ListView, View
 from .models import Profile
+from .forms import ProfileForm
 
 
 # class ProfileListView(ListView):
@@ -26,8 +27,6 @@ class  ProfileDetail(View):
             request,
             "prof_detail.html",
             {
-            "profile": profile,
-            "reviews": reviews,
-            }
-    )
-
+                "profile": profile,
+                "profile_form": ProfileForm,
+            })
