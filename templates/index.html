@@ -18,22 +18,21 @@
                                 alt="Avatar" 
                                     src="https://res.cloudinary.com/mycodestudies/image/upload/v1681492418/beautician_img1_vqvgko.jpg">
                                 {% else %}
-                                <img  class="rounded-circle mb-3" style="width: 150px;"
-                                alt="Avatar"  src=" {{ profile.avatar.url }}">
+                                <img class="card-img-top" src=" {{ profile.avatar.url }}">
                                 {% endif %}
                                 <div class="image-flash">
                                    
-                                    <a href="{% url 'prof_detail' profile.slug %}" class="post-link"></a>
-                                    <h4 class="mb-2"><strong>{{ profile.name }}</strong></h4>
+                                    <a href="{% url 'profile_detail' profile.slug %}" class="post-link"></a>
+                                    <h5 class="mb-2"><strong>{{ profile.name }}</strong></h5>
                                     
                                 </div>
                             </div>
-                            <a href="{% url 'prof_detail' profile.slug %}" class="post-link">
+                            <a href="{% url 'profile_detail' profile.slug %}" class="post-link">
                                 <p class="text-muted h5">{{ profile.profession }} </p>
                                 
                             </a>
                             <hr />
-                            <p class="card-text text-muted h6">{{ profile.created}}</p>
+                            <p class="card-text text-muted h6">{{ profile.created_on}}</p>
 
 
                         </div>

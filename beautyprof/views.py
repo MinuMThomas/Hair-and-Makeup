@@ -1,13 +1,15 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
-# from django.views import ListView, View
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import CreateView, UpdateView
+from django.contrib import messages
 from .models import Profile
 from .forms import ProfileForm
+from django.urls import reverse, reverse_lazy
+from django.contrib.messages.views import SuccessMessageMixin
 
-
-# class ProfileListView(ListView):
-#     def get(self, request, *args, **kwargs):
-#         return render(request, 'index.html')
 
 class ProfileListView(generic.ListView):
     model = Profile
@@ -16,17 +18,89 @@ class ProfileListView(generic.ListView):
     paginate_by = 6
 
 
-class  ProfileDetail(View):
+class ProfileDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
-        queryset = Profile.objects.order_by('updated')
+        queryset = Profile.objects.all()
         profile = get_object_or_404(queryset, slug=slug)
-        reviews = profile.reviews.filter(approved=True).order_by('created_on')
-
+        
         return render(
             request,
-            "prof_detail.html",
+            "profile_detail.html",
             {
                 "profile": profile,
-                "profile_form": ProfileForm,
             })
+
+
+@login_required
+def view_my_profile(request):
+    profile = get_object_or_404(Profile, user=request.user)
+    return render(request, 'view_profile.html', {'profile': profile})
+
+
+# class AddProfile(SuccessMessageMixin, LoginRequiredMixin, CreateView):
+#     model = Profile
+#     template_name = 'add_profile.html'
+#     success_url = reverse_lazy('home')
+#     form_class = ProfileForm
+#     success_message = 'created profile'
+
+#     def form_valid(self, form):
+#         if self.request.POST.get('status'):
+#             form.instance.status = int(self.request.POST.get('status'))
+#         form.instance.author = self.request.user
+#         return super().form_valid(form)
+
+
+@login_required
+def add_profile(request):
+    if request.method == 'POST':
+        form = ProfileForm(request.POST)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            
+            profile.save()
+            messages.success(request, 'Profile created successfully.')
+            return redirect('view_profile')
+    else:
+        form = ProfileForm()
+    context = {
+        'form': form,
+         }
+
+    return render(request, 'add_profile.html', context)
+
+
+    
+
+
+@login_required
+def edit_profile(request):
+    profile = get_object_or_404(Profile, user=request.user)
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, instance=profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Profile updated successfully.')
+            return redirect('view_profile')
+    else:
+        form = ProfileForm(instance=profile)
+
+    context = {
+        'form': form, 
+        'user': profile,
+            }
+    return render(request, 'edit_profile.html', context)
+
+
+
+
+
+@login_required
+def delete_profile(request):
+    profile = get_object_or_404(Profile, user=request.user)
+    if request.method == 'POST':
+        profile.delete()
+        messages.success(request, 'Profile deleted successfully.')
+        return redirect('home')
+    return render(request, 'delete_profile.html', {'profile': profile})

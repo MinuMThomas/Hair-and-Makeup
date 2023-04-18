@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <!-- Profile title and profession -->
+                <h1 class="profile-title">{{profile.name}}</h1>
+                <p class="profile-subtitle">{{profile.profession}}</p>
+                <p class="profile-subtitle">{{profile.created_on}} </p>
+               
+            </div>
+            <div class="d-none d-md-block col-md-6 masthead-image">
+                <!-- The featured image URL goes in the src attribute -->
+                {% if "placeholder" in profile.profile_image.url %}
+                <img src="https://res.cloudinary.com/mycodestudies/image/upload/v1681492418/beautician_img1_vqvgko.jpg" width="80%" alt="salon image">
+                {% else %}
+                <img src="{{ profile.profile_image.url }}" width="80%" alt="user has uploaded a custom image">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4  mt-3 left  top">
+            <div class="card-body">
+                <!-- user bio -->
+                <p class="card-text ">
+                    {{profile.content | safe}}
+                </p>
+            </div>
+                <div class="row">
+                    <div class="col-1">
+                        {% with reviews.count as total_reviews %}
+                        <strong class="text-secondary"><i class="far fa-comments"></i>
+                            <!-- Our total_comments variable goes before the closing strong tag -->
+                            {{ total_reviews}}</strong>
+                        {% endwith %}
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <h3>Reviews:</h3>
+            <div class="card-body">
+                <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
+                {% for review in reviews %}
+                <div class="comments" style="padding: 10px;">
+                    <p class="font-weight-bold">
+                        <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
+                        {{ review.name }}
+                        <span class=" text-muted font-weight-normal">
+                            <!-- The comment's created date goes here -->
+                            {{ review.created_on }}
+                        </span> wrote:
+                    </p>
+                    <!-- The body of the comment goes before the | -->
+                    {{ review.body | linebreaks }}
+                </div>
+                <!-- Our for loop ends here -->
+                {% endfor %}
+            </div>
+        </div>
+        {% if user.is_authenticated %}
+            <div class="col-md-4 card mb-4  mt-3 ">
+                <div class="card-body">
+        
+                    {% if reviewd %} 
+                        <div class="alert alert-success" role="alert">
+                            review  saved
+                        </div>
+                        {% else %}
+                    
+                        <h3>Write a Review:</h3>
+                        <p>Posting as: {{ user.first_name }}</p>
+                        <form method="post" style="margin-top: 1.3em;">
+                            {{ review_form | crispy }}
+                            {% csrf_token %}
+                            <br>
+                            <button type="submit" class="btn btn-secondary">Submit</button>
+                        </form>
+
+                    {% endif %}           
+                </div>
+            </div>
+            {% endif %}
+    </div>
+    <div class="row">
+      <!-- workedit -->
+
+      {% if user.is_authenticated %}
+      {% if profile.user == request.user %}
+        <a class="nav-link" href="{% url 'edit_profile' context.slug %}">Edit Profile</a>
+        {% endif %}
+        
+        {% endif %}
+
+
+
+        <div class="col">
+            <hr>
+
+ </div>
+</div>
+</div>
+{% endblock content %}
