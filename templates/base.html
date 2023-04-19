@@ -33,26 +33,25 @@
                       <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                   </li>
                   {% if request.user.is_authenticated %}
-                  
-                  <li class="nav-item">
-                      <a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a>
-                  </li>
-                    <li class="nav-item"></li>
-                  <a class="nav-link" href="{% url 'add_profile' %}" target="_blank">Create Profile</a>
-                </li>
+
+
                 <!-- only show when user create the profile -->
        
-              
+                {% if request.user.profile %}
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'view_my_profile' %}">Profile</a>
+                    <a class="nav-link" href="{% url 'view_my_profile' %}"> My Profile</a>
                 </li>
+                {% else %}
+                <li class="nav-item"></li>
+                  <a class="nav-link" href="{% url 'add_profile' %}" target="_blank">Create Profile</a>
+                </li>
+                {% endif %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a>
-                </li>
-
-                <li class="nav-item">
-                    <p class="nav-link" >Logged in as: {{request.user}}</p>
-                </li>
+                  <a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a>
+              </li>
+              <li class="nav-item">
+                  <p class="nav-link" >Logged in as: {{request.user}}</p>
+              </li>
                   {% else %}
                   <li class="nav-item">
                       <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
@@ -94,14 +93,14 @@
       </div>
   </div>
   <!-- site heading -->
-<header class="masthead masthead-text">
+<!-- <header class="masthead masthead-text">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto site-heading-parent">
         <div class="site-heading-parent">
           <h1>Freelance Beauticians</h1>
 
-</header>
+</header> -->
   <main class="flex-shrink-0 main-bg">
 
       {% block content %}
