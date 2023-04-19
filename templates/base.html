@@ -41,7 +41,8 @@
                   <a class="nav-link" href="{% url 'add_profile' %}" target="_blank">Create Profile</a>
                 </li>
                 <!-- only show when user create the profile -->
-                {% if request.user.is_authenticated %}
+       
+              
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'view_my_profile' %}">Profile</a>
                 </li>
@@ -62,7 +63,7 @@
                   
                   {% endif %}
 
-                    {% endif %}
+                  
               </ul>
           </div>
       </div>
