@@ -32,14 +32,14 @@
                   <li class="nav-item">
                       <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                   </li>
-                  {% if user.is_authenticated %}
+                  {% if request.user.is_authenticated %}
                   
                   <li class="nav-item">
                       <a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
+                    <a class="nav-link" href="{% url 'view_my_profile' %}">Profile</a>
                 </li>
                 <li class="nav-item">
                     <p class="nav-link" >Logged in as: {{request.user}}</p>
@@ -60,7 +60,7 @@
 
 <!-- pre work -->
 
-    <a class="nav-link" href="{% url 'add_profile' %}">Create Profile</a>
+    <a class="nav-link" href="{% url 'add_profile' %}" target="_blank">Create Profile</a>
     
 
 

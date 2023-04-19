@@ -35,6 +35,7 @@ class ProfileDetail(View):
 @login_required
 def view_my_profile(request):
     profile = get_object_or_404(Profile, user=request.user)
+    # add condition if profile dosent exist readirect to do create profile
     return render(request, 'view_profile.html', {'profile': profile})
 
 
@@ -61,7 +62,7 @@ def add_profile(request):
             
             profile.save()
             messages.success(request, 'Profile created successfully.')
-            return redirect('view_profile')
+            return redirect('view_my_profile')
     else:
         form = ProfileForm()
     context = {
@@ -82,7 +83,7 @@ def edit_profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile updated successfully.')
-            return redirect('view_profile')
+            return redirect('view_my_profile')
     else:
         form = ProfileForm(instance=profile)
 
@@ -91,8 +92,6 @@ def edit_profile(request):
         'user': profile,
             }
     return render(request, 'edit_profile.html', context)
-
-
 
 
 
