@@ -37,10 +37,18 @@
                   <li class="nav-item">
                       <a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a>
                   </li>
-
+                    <li class="nav-item"></li>
+                  <a class="nav-link" href="{% url 'add_profile' %}" target="_blank">Create Profile</a>
+                </li>
+                <!-- only show when user create the profile -->
+                {% if request.user.is_authenticated %}
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'view_my_profile' %}">Profile</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a>
+                </li>
+
                 <li class="nav-item">
                     <p class="nav-link" >Logged in as: {{request.user}}</p>
                 </li>
@@ -53,6 +61,8 @@
                   </li>
                   
                   {% endif %}
+
+                    {% endif %}
               </ul>
           </div>
       </div>
@@ -60,7 +70,7 @@
 
 <!-- pre work -->
 
-    <a class="nav-link" href="{% url 'add_profile' %}" target="_blank">Create Profile</a>
+    
     
 
 

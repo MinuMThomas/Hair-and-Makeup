@@ -58,6 +58,7 @@ def add_profile(request):
     if request.method == 'POST':
         form = ProfileForm(request.POST)
         if form.is_valid():
+            form.instance.user = request.user
             profile = form.save(commit=False)
             
             profile.save()

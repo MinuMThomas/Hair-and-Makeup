@@ -4,9 +4,9 @@
   <h1>View Profile</h1>
   <p><strong>First Name:</strong> {{ profile.name }}</p>
   <p><strong>Last Name:</strong> {{ profile.profession }}</p>
-  <p><strong>Bio:</strong> {{ profile.email }}</p>
+  <p><strong>Email:</strong> {{ profile.email }}</p>
   <p><strong>Bio:</strong> {{ profile.bio }}</p>
-  <p><strong>Bio:</strong> {{ profile.avatar }}</p>
+  <p><strong>Profile image:</strong> {{ profile.avatar }}</p>
   <a href="{% url 'edit_profile' %}">Edit Profile</a>
   <a href="{% url 'delete_profile' %}">Delete Profile</a>
 {% endblock %}

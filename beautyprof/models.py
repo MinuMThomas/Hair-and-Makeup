@@ -18,7 +18,7 @@ class Profile(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
+        self.slug = slugify(self.user)
         super(Profile, self).save(*args, **kwargs)
     
     def __str__(self):
