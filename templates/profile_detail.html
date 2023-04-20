@@ -9,6 +9,9 @@
                 <!-- Profile title and profession -->
                 <h1 class="profile-title">{{profile.name}}</h1>
                 <p class="profile-subtitle">{{profile.profession}}</p>
+                <p class="profile-subtitle">{{profile.email}} </p>
+                <p class="profile-subtitle">{{profile.county}} </p>
+                <p class="profile-subtitle">{{profile.avatar}} </p>
                 <p class="profile-subtitle">{{profile.created_on}} </p>
                
             </div>
@@ -30,7 +33,7 @@
             <div class="card-body">
                 <!-- user bio -->
                 <p class="card-text ">
-                    {{profile.content | safe}}
+                    {{profile.bio | safe}}
                 </p>
             </div>
                 <div class="row">
