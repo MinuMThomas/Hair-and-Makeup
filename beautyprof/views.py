@@ -68,6 +68,7 @@ class ProfileDetail(View):
             review = review_form.save(commit=False)
             review.profile = profile
             review.save()
+            messages.success(request, 'Review added successfully.')
         else:
             review_form = ReviewForm()
 
@@ -95,7 +96,7 @@ def view_my_profile(request):
 @login_required
 def add_profile(request):
     if request.method == 'POST':
-        form = ProfileForm(request.POST)
+        form = ProfileForm(request.POST, request.FILES)
         if form.is_valid():
             form.instance.user = request.user
             profile = form.save(commit=False)
@@ -111,15 +112,11 @@ def add_profile(request):
 
     return render(request, 'add_profile.html', context)
 
-
-    
-
-
 @login_required
 def edit_profile(request):
     profile = get_object_or_404(Profile, user=request.user)
     if request.method == 'POST':
-        form = ProfileForm(request.POST, instance=profile)
+        form = ProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile updated successfully.')
@@ -132,7 +129,6 @@ def edit_profile(request):
         'user': profile,
             }
     return render(request, 'edit_profile.html', context)
-
 
 
 @login_required

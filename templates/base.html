@@ -34,9 +34,11 @@
                   </li>
                   {% if request.user.is_authenticated %}
 
+                  {% if request.user.is_staff %}
 
+                  <a class="nav-link" href="https://8000-minumthomas-pp4bb-qpd98eq8xvc.ws-eu94.gitpod.io/admin/" target="_blank">Admin Panel</a>
                 <!-- only show when user create the profile -->
-       
+       {% endif %}
                 {% if request.user.profile %}
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'view_my_profile' %}"> My Profile</a>

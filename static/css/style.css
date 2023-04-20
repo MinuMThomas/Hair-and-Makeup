@@ -10,7 +10,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Rubik+Distressed&display=swap');
 
 /* Main */
-body {
+.main-bg {
     font-size: 20px;
     color: #212529;
     font-family: Poppins, serif;
