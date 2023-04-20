@@ -1,7 +1,15 @@
 {% extends 'base.html' %}
-{% block content %}
 {% load crispy_forms_tags %}
+{% block content %}
 
+
+<header class="masthead masthead-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto site-heading-parent">
+          <div class="site-heading-parent">
+            <h2>Stylist {{profile.name}}</h2>
+  </header>
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
@@ -62,7 +70,7 @@
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
                         <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-                        {{ review.name }}
+                        {{ review.first_name }}
                         <span class=" text-muted font-weight-normal">
                             <!-- The comment's created date goes here -->
                             {{ review.created_on }}
@@ -86,7 +94,7 @@
                         {% else %}
                     
                         <h3>Write a Review:</h3>
-                        <p>Posting as: {{ user.first_name }}</p>
+                        <p>Posting as: {{ request.user }}</p>
                         <form method="post" style="margin-top: 1.3em;">
                             {{ review_form | crispy }}
                             {% csrf_token %}
@@ -99,21 +107,6 @@
             </div>
             {% endif %}
     </div>
-    <div class="row">
-      <!-- workedit -->
-
-      {% if user.is_authenticated %}
-      {% if profile.user == request.user %}
-        <a class="nav-link" href="{% url 'edit_profile' %}">Edit Profile</a>
-        {% endif %}
-        
-        {% endif %}
-
-
-
-        <div class="col">
-            <hr>
-
  </div>
 </div>
 </div>

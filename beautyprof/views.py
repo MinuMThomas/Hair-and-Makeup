@@ -5,8 +5,8 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView, UpdateView
 from django.contrib import messages
-from .models import Profile
-from .forms import ProfileForm
+from .models import Profile, Review
+from .forms import ProfileForm, ReviewForm
 from django.urls import reverse, reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 
@@ -18,39 +18,78 @@ class ProfileListView(generic.ListView):
     paginate_by = 6
 
 
+"""Detailed view of individual Profile"""
+# class ProfileDetail(View):
+
+#     def get(self, request, slug, *args, **kwargs):
+#         queryset = Profile.objects.all()
+#         profile = get_object_or_404(queryset, slug=slug)
+        
+#         return render(
+#             request,
+#             "profile_detail.html",
+#             {
+#                 "profile": profile,
+#             })
+
+
 class ProfileDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
-        queryset = Profile.objects.all()
+        queryset = Profile.objects.order_by('updated')
         profile = get_object_or_404(queryset, slug=slug)
-        
+        reviews = profile.reviews.order_by("-created_on")
+        review_form = ReviewForm()
+        # updaterivewform = updateReviewForm()
+     
         return render(
             request,
             "profile_detail.html",
             {
                 "profile": profile,
+                "reviews": reviews,
+                "reviewed": False,
+                "review_form": review_form,
+                # "update_review": updateReviewForm,
             })
+
+    def post(self, request, slug, *args, **kwargs):
+        # queryset = Profile.objects.order_by('updated')
+        queryset = Profile.objects.all()
+        profile = get_object_or_404(queryset, slug=slug)
+        reviews = profile.reviews.order_by("-created_on")
+        review_form = ReviewForm()
+        # updaterivewform = updateReviewForm()
+        review_form = ReviewForm(data=request.POST)
+
+        if review_form.is_valid():
+            review_form.instance.email = request.user.email
+            review_form.instance.first_name = request.user.username
+            review = review_form.save(commit=False)
+            review.profile = profile
+            review.save()
+        else:
+            review_form = ReviewForm()
+
+        return render(
+            request,
+            "profile_detail.html",
+            {
+                "profile": profile,
+                "reviews": reviews,
+                "reviewed": True,
+                "review_form": review_form,
+                # "update_review": updateReviewForm,
+            })            
 
 
 @login_required
 def view_my_profile(request):
     profile = get_object_or_404(Profile, user=request.user)
+    reviews = profile.reviews.order_by("-created_on")
     # add condition if profile dosent exist readirect to do create profile
-    return render(request, 'view_profile.html', {'profile': profile})
-
-
-# class AddProfile(SuccessMessageMixin, LoginRequiredMixin, CreateView):
-#     model = Profile
-#     template_name = 'add_profile.html'
-#     success_url = reverse_lazy('home')
-#     form_class = ProfileForm
-#     success_message = 'created profile'
-
-#     def form_valid(self, form):
-#         if self.request.POST.get('status'):
-#             form.instance.status = int(self.request.POST.get('status'))
-#         form.instance.author = self.request.user
-#         return super().form_valid(form)
+    return render(request, 'view_profile.html', {'profile': profile,
+                                                 'reviews': reviews, })
 
 
 @login_required

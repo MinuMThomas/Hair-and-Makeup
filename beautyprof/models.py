@@ -31,3 +31,17 @@ class Meta:
     def __str__(self):
         return str(self.username)
 
+
+class Review(models.Model):
+
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE,
+                                related_name="reviews")
+    first_name = models.CharField(max_length=80)
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return f"Review {self.body} by {self.first_name}"
