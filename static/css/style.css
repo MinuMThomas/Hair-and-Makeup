@@ -14,7 +14,8 @@
     font-size: 20px;
     color: #212529;
     font-family: Poppins, serif;
-    background-color: #dc7070;
+    background-color: rgb(238,174,202);
+    background-color: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }
 
 p {
