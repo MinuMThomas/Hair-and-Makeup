@@ -19,19 +19,6 @@ class ProfileListView(generic.ListView):
 
 
 """Detailed view of individual Profile"""
-# class ProfileDetail(View):
-
-#     def get(self, request, slug, *args, **kwargs):
-#         queryset = Profile.objects.all()
-#         profile = get_object_or_404(queryset, slug=slug)
-        
-#         return render(
-#             request,
-#             "profile_detail.html",
-#             {
-#                 "profile": profile,
-#             })
-
 
 class ProfileDetail(View):
 
@@ -40,7 +27,6 @@ class ProfileDetail(View):
         profile = get_object_or_404(queryset, slug=slug)
         reviews = profile.reviews.order_by("-created_on")
         review_form = ReviewForm()
-        # updaterivewform = updateReviewForm()
      
         return render(
             request,
@@ -50,16 +36,16 @@ class ProfileDetail(View):
                 "reviews": reviews,
                 "reviewed": False,
                 "review_form": review_form,
-                # "update_review": updateReviewForm,
+                
             })
 
     def post(self, request, slug, *args, **kwargs):
-        # queryset = Profile.objects.order_by('updated')
+        
         queryset = Profile.objects.all()
         profile = get_object_or_404(queryset, slug=slug)
         reviews = profile.reviews.order_by("-created_on")
         review_form = ReviewForm()
-        # updaterivewform = updateReviewForm()
+        
         review_form = ReviewForm(data=request.POST)
 
         if review_form.is_valid():
@@ -80,7 +66,7 @@ class ProfileDetail(View):
                 "reviews": reviews,
                 "reviewed": True,
                 "review_form": review_form,
-                # "update_review": updateReviewForm,
+               
             })            
 
 
@@ -88,7 +74,7 @@ class ProfileDetail(View):
 def view_my_profile(request):
     profile = get_object_or_404(Profile, user=request.user)
     reviews = profile.reviews.order_by("-created_on")
-    # add condition if profile dosent exist readirect to do create profile
+    
     return render(request, 'view_profile.html', {'profile': profile,
                                                  'reviews': reviews, })
 
