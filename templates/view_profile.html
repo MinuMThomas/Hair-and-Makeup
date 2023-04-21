@@ -2,64 +2,68 @@
 {% load static %}
 {% block content %}
 <header class="masthead masthead-text">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto site-heading-parent">
-        <div class="site-heading-parent">
-          <h2>My Profile</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto site-heading-parent">
+                <div class="site-heading-parent">
+                    <h2>My Profile</h2>
+                    <br>
 </header>
 <div class="masthead">
-  <div class="container">
-      <div class="row g-0">
+    <div class="container">
+        <div class="row g-0">
 
-          <div class="col-md-6 masthead-text">
-  <p class="profile-subtitle"><strong>First Name:</strong> {{ profile.name }}</p>
-  <p class="profile-subtitle"><strong>Profession:</strong> {{ profile.profession }}</p>
-  <p class="profile-subtitle"><strong>Email:</strong> {{ profile.email }}</p>
-  <p class="profile-subtitle"><strong>Bio:</strong> {{ profile.bio }}</p>
-  <p class="profile-subtitle"><strong>Profile image:</strong> {{ profile.avatar }}</p>
-  
-  <a href="{% url 'edit_profile' %}">Edit Profile</a>
-  <a href="{% url 'delete_profile' %}">Delete Profile</a>
-          </div>
-      </div>
-      <div class="d-none d-md-block col-md-6 masthead-image">
-        <!-- The featured image URL goes in the src attribute -->
-        {% if "placeholder" in profile.avatar.url %}
-        <img src="https://res.cloudinary.com/mycodestudies/image/upload/v1681492418/beautician_img1_vqvgko.jpg" width="80%" alt="salon image">
-        {% else %}
-        <img src="{{ profile.avatar.url }}" width="80%" alt="user has uploaded a custom image">
-        {% endif %}
-    </div>
-  
-
-  <div class="row">
-    <div class="col">
-        <hr>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-8 card mb-4  mt-3 ">
-        <h3>Reviews:</h3>
-        <div class="card-body">
-            <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
-            {% for review in reviews %}
-            <div class="comments" style="padding: 10px;">
-                <p class="font-weight-bold">
-                    <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-                    {{ review.first_name }}
-                    <span class=" text-muted font-weight-normal">
-                        <!-- The comment's created date goes here -->
-                        {{ review.created_on }}
-                    </span> wrote:
-                </p>
-                <!-- The body of the comment goes before the | -->
-                {{ review.body | linebreaks }}
+            <div class="col-md-6 masthead-text">
+                <p class="profile-subtitle"><strong>First Name:</strong> {{ profile.name }}</p>
+                <p class="profile-subtitle"><strong>Profession:</strong> {{ profile.profession }}</p>
+                <p class="profile-subtitle"><strong>Email:</strong> {{ profile.email }}</p>
+                <p class="profile-subtitle"><strong>Bio:</strong> {{ profile.bio }}</p>
+                <p class="profile-subtitle"><strong>Profile image:</strong> {{ profile.avatar }}</p>
+                <br>
+                <a href="{% url 'edit_profile' %}">Edit Profile</a>
+                <a href="{% url 'delete_profile' %}">Delete Profile</a>
             </div>
-            <!-- Our for loop ends here -->
-            {% endfor %}
+        </div>
+        <br>
+        <div class="d-none d-md-block col-md-6 masthead-image">
+            <!-- The featured image URL goes in the src attribute -->
+            {% if "placeholder" in profile.avatar.url %}
+            <img src="https://res.cloudinary.com/mycodestudies/image/upload/v1681492418/beautician_img1_vqvgko.jpg"
+                width="80%" alt="salon image">
+            {% else %}
+            <img src="{{ profile.avatar.url }}" width="80%" alt="user has uploaded a custom image">
+            {% endif %}
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 card mb-4  mt-3 ">
+                <h3>Reviews:</h3>
+                <div class="card-body">
+                    <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
+                    {% for review in reviews %}
+                    <div class="comments" style="padding: 10px;">
+                        <p class="font-weight-bold">
+                            <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
+                            {{ review.first_name }}
+                            <span class=" text-muted font-weight-normal">
+                                <!-- The comment's created date goes here -->
+                                {{ review.created_on }}
+                            </span> wrote:
+                        </p>
+                        <!-- The body of the comment goes before the | -->
+                        {{ review.body | linebreaks }}
+                    </div>
+                    <!-- Our for loop ends here -->
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
-</div>
 </div>
 {% endblock %}
