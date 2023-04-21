@@ -1,17 +1,30 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html class="h-100">
+<html lang="en" class="h-100">
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- links from blog before i think tutorial -->
+
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+  </script>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
   <title>Freelance Beauticians</title>
 </head>
 
@@ -22,7 +35,10 @@
      <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container-fluid">
           <a class="navbar-brand" href="{% url 'home' %}">
-          Freelance Beauticians</a>
+            <img class="d-inline-block align-top img-fluid"
+            src="https://res.cloudinary.com/mycodestudies/image/upload/v1682078824/bbPP4_logo-transformed_mutiga.png"
+          alt="salon image">
+          </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
               aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -45,7 +61,7 @@
                 </li>
                 {% else %}
                 <li class="nav-item"></li>
-                  <a class="nav-link" href="{% url 'add_profile' %}" target="_blank">Create Profile</a>
+                  <a class="nav-link" href="{% url 'add_profile' %}">Create Profile</a>
                 </li>
                 {% endif %}
                 <li class="nav-item">
@@ -69,19 +85,6 @@
           </div>
         </div>
   </nav>
-
-
-<!-- pre work -->
-
-    
-    
-
-
-
-<!-- prework -->
-
-
-
 
   <div class="container">
       <div class="row">
@@ -109,19 +112,33 @@
         <a href="https://www.facebook.com/" target="blank"><i class="fab fa-facebook-square ms-3"></i></a>
           <a href="https://www.instagram.com/" target="blank"><i class="fab fa-instagram-square ms-3"></i></a>
       </p>
+        <!-- Javascript Alert Messages from Code Institute: I think therefore I Blog -->
+ 
   </footer>
   
  
 
  <!-- Bootstrap CSS -->
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+ <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
- <script src="https://kit.fontawesome.com/d9aa963575.js" crossorigin="anonymous"></script>
+ <script src="https://kit.fontawesome.com/d9aa963575.js" crossorigin="anonymous"></script> -->
 
  <!-- Bootstrap js -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
- integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
 
+
+ <script>
+    setTimeout(function () {
+      let messages = document.getElementById('msg');
+      let alert = new bootstrap.Alert(messages);
+      alert.close();
+    }, 2500);
+
+    // copyright year
+    $("#copyright").text(new Date().getFullYear());
+
+  </script>
 </body>
 
 </html>
