@@ -9,4 +9,4 @@ urlpatterns = [
     path('edit/', views.edit_profile, name='edit_profile'),
     path('delete/', views.delete_profile, name='delete_profile'),
     path('<slug:slug>/', views.ProfileDetail.as_view(), name='profile_detail'),
-] 
+]
