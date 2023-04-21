@@ -6,7 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView, UpdateView
 from django.contrib import messages
 from .models import Profile, Review
-from .forms import ProfileForm, ReviewForms
+from .forms import ProfileForm, ReviewForm
 from django.contrib.messages.views import SuccessMessageMixin
 
 
