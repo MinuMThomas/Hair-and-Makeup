@@ -6,8 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView, UpdateView
 from django.contrib import messages
 from .models import Profile, Review
-from .forms import ProfileForm, ReviewForm
-from django.urls import reverse, reverse_lazy
+from .forms import ProfileForm, ReviewForms
 from django.contrib.messages.views import SuccessMessageMixin
 
 
@@ -125,3 +124,14 @@ def delete_profile(request):
         messages.success(request, 'Profile deleted successfully.')
         return redirect('home')
     return render(request, 'delete_profile.html', {'profile': profile})
+
+
+"""custom error handling page 404 and 500"""
+
+
+def handler404(request, exception):
+    return render(request, "errors/404.html", status=404)
+
+
+def handler500(request):
+    return render(request, "errors/500.html", status=500)
