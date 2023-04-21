@@ -19,6 +19,7 @@ class ProfileListView(generic.ListView):
 
 """Detailed view of individual Profile"""
 
+
 class ProfileDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
@@ -26,7 +27,7 @@ class ProfileDetail(View):
         profile = get_object_or_404(queryset, slug=slug)
         reviews = profile.reviews.order_by("-created_on")
         review_form = ReviewForm()
-     
+
         return render(
             request,
             "profile_detail.html",
@@ -35,16 +36,13 @@ class ProfileDetail(View):
                 "reviews": reviews,
                 "reviewed": False,
                 "review_form": review_form,
-                
-            })
+                })
 
     def post(self, request, slug, *args, **kwargs):
-        
         queryset = Profile.objects.all()
         profile = get_object_or_404(queryset, slug=slug)
         reviews = profile.reviews.order_by("-created_on")
         review_form = ReviewForm()
-        
         review_form = ReviewForm(data=request.POST)
 
         if review_form.is_valid():
@@ -65,15 +63,13 @@ class ProfileDetail(View):
                 "reviews": reviews,
                 "reviewed": True,
                 "review_form": review_form,
-               
-            })            
+                })
 
 
 @login_required
 def view_my_profile(request):
     profile = get_object_or_404(Profile, user=request.user)
     reviews = profile.reviews.order_by("-created_on")
-    
     return render(request, 'view_profile.html', {'profile': profile,
                                                  'reviews': reviews, })
 
@@ -85,7 +81,6 @@ def add_profile(request):
         if form.is_valid():
             form.instance.user = request.user
             profile = form.save(commit=False)
-            
             profile.save()
             messages.success(request, 'Profile created successfully.')
             return redirect('view_my_profile')
@@ -96,6 +91,7 @@ def add_profile(request):
          }
 
     return render(request, 'add_profile.html', context)
+
 
 @login_required
 def edit_profile(request):
@@ -110,7 +106,7 @@ def edit_profile(request):
         form = ProfileForm(instance=profile)
 
     context = {
-        'form': form, 
+        'form': form,
         'user': profile,
             }
     return render(request, 'edit_profile.html', context)
