@@ -31,10 +31,10 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in profile.avatar.url %}
-                                <img class="rounded-circle mb-3" style="width: 150px;"
+                                <img class="card-img-top rounded-circle mb-3" 
                                     src="https://res.cloudinary.com/mycodestudies/image/upload/v1682080266/makeup-transformed_dkltfn.jpg" alt="Avatar" >
                                 {% else %}
-                                <img class="card-img-top" src=" {{ profile.avatar.url }}" alt="profile image of the user">
+                                <img class="card-img-top rounded-circle mb-3" src=" {{ profile.avatar.url }}" alt="profile image of the user">
                                 {% endif %}
                                 <div class="image-flash">
                                     <a href="{% url 'profile_detail' profile.slug %}" class="post-link"></a>
