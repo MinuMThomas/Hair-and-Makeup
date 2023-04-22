@@ -34,7 +34,7 @@
                                 <img class="rounded-circle mb-3" style="width: 150px;"
                                     src="https://res.cloudinary.com/mycodestudies/image/upload/v1681492425/hair-dresser_w1z3yc.jpg" alt="Avatar" >
                                 {% else %}
-                                <img class="card-img-top" src=" {{ profile.avatar.url }}">
+                                <img class="card-img-top" src=" {{ profile.avatar.url }}" alt="profile image of the user">
                                 {% endif %}
                                 <div class="image-flash">
                                     <a href="{% url 'profile_detail' profile.slug %}" class="post-link"></a>

@@ -16,7 +16,7 @@ class ProfileForm(forms.ModelForm):
         prepopulated_fields = {'slug': 'user'}
 
         widgets = {
-            'content': SummernoteWidget(),
+            'bio': SummernoteWidget(),
                     }
 
 
