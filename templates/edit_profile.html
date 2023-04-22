@@ -4,14 +4,20 @@
 <header class="masthead masthead-text">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto site-heading-parent">
-        <div class="site-heading-parent">
-          <h2>Stylist {{profile.name}}</h2>
-  <h1>Edit Profile</h1>
-  <form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    {{ form.media }}
-    <button type="submit">Save</button>
-  </form>
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div >
+          <h1>Edit Profile</h1>
+
+          <br>
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {{ form.media }}
+            <button type="submit">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 {% endblock %}
