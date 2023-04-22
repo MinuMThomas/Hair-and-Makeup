@@ -23,4 +23,4 @@ class ProfileForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields = ('body',)             
+        fields = ('body',)

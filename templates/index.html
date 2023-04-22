@@ -6,13 +6,17 @@
 <header class="masthead masthead-text">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto site-heading-parent">
-        <div class="site-heading-parent">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div>
           <h2><span>Freelance</span>
             <span>Stylists</span>
             <span> and </span> 
             <span>Makeup</span>
             <span>Artists</span></h2>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
 <br>
 <div class="container-fluid">
@@ -27,8 +31,8 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in profile.avatar.url %}
-                                <img class="rounded-circle mb-3" style="width: 150px;" alt="Avatar"
-                                    src="https://res.cloudinary.com/mycodestudies/image/upload/v1681492425/hair-dresser_w1z3yc.jpg">
+                                <img class="rounded-circle mb-3" style="width: 150px;"
+                                    src="https://res.cloudinary.com/mycodestudies/image/upload/v1681492425/hair-dresser_w1z3yc.jpg" alt="Avatar" >
                                 {% else %}
                                 <img class="card-img-top" src=" {{ profile.avatar.url }}">
                                 {% endif %}
@@ -41,7 +45,7 @@
                                 <p class="text-muted h5">{{ profile.profession }} </p>
 
                             </a>
-                            <hr />
+                            <hr>
                             <p class="card-text text-muted h6">{{ profile.created_on}}</p>
 
 
