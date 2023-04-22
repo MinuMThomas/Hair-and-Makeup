@@ -51,6 +51,7 @@ class ProfileDetail(View):
             review = review_form.save(commit=False)
             review.profile = profile
             review.save()
+            review_form = ReviewForm()
             messages.success(request, 'Review added successfully.')
         else:
             review_form = ReviewForm()
