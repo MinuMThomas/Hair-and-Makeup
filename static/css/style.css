@@ -49,7 +49,7 @@ h6 {
 #mainNav {
     position: absolute;
     border-bottom: 1px solid #e9ecef;
-    background-color: #fff;
+    /* background-color: #fff; */
     font-family: 'Poppins', Arial, sans-serif
 }
 
@@ -83,6 +83,11 @@ h6 {
     max-width: 20vh;
 }
 
+.nav-link.text-left {
+    position: absolute;
+    right: 0;
+    margin: 0;
+}
 
 
 /* profiles */
@@ -98,3 +103,5 @@ h6 {
 footer li {
     color: #357cc9;
 }
+
+
