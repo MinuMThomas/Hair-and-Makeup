@@ -16,24 +16,24 @@
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
-
             <div class="col-md-6 masthead-text">
                 <p><strong>First Name: </strong> {{ profile.name }}</p>
                 <p><strong>Profession: </strong> {{ profile.profession }}</p>
                 <p><strong>Email: </strong> {{ profile.email }}</p>
                 <p><strong>Bio: </strong> {{ profile.bio }}</p>
-                <p><strong>Profile image: </strong> {{ profile.avatar }}</p>
+                <p><strong>Profile image: </strong> </p>
                 <br>
             </div>
-        </div>
-        <div class="d-none d-md-block col-md-6 masthead-image">
-            <!-- The featured image URL goes in the src attribute -->
-            {% if "placeholder" in profile.avatar.url %}
-            <img src="https://res.cloudinary.com/mycodestudies/image/upload/v1682080266/makeup-transformed_dkltfn.jpg"
-                 style="width:80%;"  alt="profile image">
-            {% else %}
-            <img src="{{ profile.avatar.url }}" style="width:80%;" alt="user has uploaded a custom image">
-            {% endif %}
+
+            <div class="d-md-block col-md-6 masthead-image">
+                <!-- The featured image URL goes in the src attribute -->
+                {% if "placeholder" in profile.avatar.url %}
+                <img src="https://res.cloudinary.com/mycodestudies/image/upload/v1682080266/makeup-transformed_dkltfn.jpg"
+                    style="width:80%; margin-top: 2em;" alt="profile image">
+                {% else %}
+                <img src="{{ profile.avatar.url }}" style="width:80%; margin-top: 2em;" alt="user has uploaded a custom image">
+                {% endif %}
+            </div>
         </div>
         <br>
         <div class="row">
@@ -41,13 +41,13 @@
                 <hr>
             </div>
         </div>
-        <div class="row">
+        <div class="row white_div_margin">
             <div class="col-md-8 card mb-4  mt-3 ">
-                <h3>Reviews:</h3>
+                <h6>Reviews:</h6>
                 <div class="card-body">
                     <!-- We want a for loop inside the empty control tags to iterate through each review in-reviews -->
                     {% for review in reviews %}
-                    <div class="comments" style="padding: 10px;">
+                    <div style="padding: 10px;">
                         <p class="font-weight-bold">
                             <!-- The commenter's name goes here.-->
                             {{ review.first_name }}
