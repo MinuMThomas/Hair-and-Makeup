@@ -45,11 +45,11 @@
             <div class="col-md-8 card mb-4  mt-3 ">
                 <h3>Reviews:</h3>
                 <div class="card-body">
-                    <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
+                    <!-- We want a for loop inside the empty control tags to iterate through each review in-reviews -->
                     {% for review in reviews %}
                     <div class="comments" style="padding: 10px;">
                         <p class="font-weight-bold">
-                            <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
+                            <!-- The commenter's name goes here.-->
                             {{ review.first_name }}
                             <span class=" text-muted font-weight-normal">
                                 <!-- The comment's created date goes here -->
