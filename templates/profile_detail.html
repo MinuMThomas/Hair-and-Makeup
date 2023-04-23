@@ -20,20 +20,20 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Profile title and profession -->
-                <h1 class="profile-title">{{profile.name}}</h1>
-                <p class="profile-subtitle">{{profile.profession}}</p>
-                <p class="profile-subtitle">{{profile.email}} </p>
-                <p class="profile-subtitle">{{profile.county}} </p>
-                <p class="profile-subtitle">{{profile.avatar}} </p>
-                <p class="profile-subtitle">{{profile.created_on}} </p>
+                <h1>{{profile.name}}</h1>
+                <p>{{profile.profession}}</p>
+                <p>{{profile.email}} </p>
+                <p>{{profile.county}} </p>
+                <p>{{profile.avatar}} </p>
+                <p>{{profile.created_on}} </p>
                
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in profile.avatar.url %}
-                <img src="https://res.cloudinary.com/mycodestudies/image/upload/v1682080266/makeup-transformed_dkltfn.jpg" width="80%" alt="profile image">
+                <img src="https://res.cloudinary.com/mycodestudies/image/upload/v1682080266/makeup-transformed_dkltfn.jpg"  style="width:80%;"  alt="profile image">
                 {% else %}
-                <img src="{{ profile.avatar.url }}" width="80%" alt="user has uploaded a custom image">
+                <img src="{{ profile.avatar.url }}"  style="width:80%;"  alt="user has uploaded a custom image">
                 {% endif %}
             </div>
         </div>
