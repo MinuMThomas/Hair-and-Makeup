@@ -31,9 +31,9 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in profile.avatar.url %}
-                <img src="https://res.cloudinary.com/mycodestudies/image/upload/v1682080266/makeup-transformed_dkltfn.jpg"  style="width:80%;"  alt="profile image">
+                <img src="https://res.cloudinary.com/mycodestudies/image/upload/v1682080266/makeup-transformed_dkltfn.jpg"  alt="profile image">
                 {% else %}
-                <img src="{{ profile.avatar.url }}"  style="width:80%;"  alt="user has uploaded a custom image">
+                <img src="{{ profile.avatar.url }}" alt="user has uploaded a custom image">
                 {% endif %}
             </div>
         </div>
