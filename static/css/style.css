@@ -88,7 +88,10 @@ h6 {
     height: 50vh;
     object-fit: cover;
 }
-
+#id_bio_iframe {
+    border: 0;
+    width: auto;
+}
 
 /* Footer */
 
