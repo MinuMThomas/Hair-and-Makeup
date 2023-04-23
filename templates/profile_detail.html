@@ -24,16 +24,16 @@
                 <p>{{profile.profession}}</p>
                 <p>{{profile.email}} </p>
                 <p>{{profile.county}} </p>
-                <p>{{profile.avatar}} </p>
+           
                 <p>{{profile.created_on}} </p>
                
             </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
+            <div class="d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in profile.avatar.url %}
-                <img src="https://res.cloudinary.com/mycodestudies/image/upload/v1682080266/makeup-transformed_dkltfn.jpg"  alt="profile image">
+                <img src="https://res.cloudinary.com/mycodestudies/image/upload/v1682080266/makeup-transformed_dkltfn.jpg"  style="width:80%;"  alt="profile image">
                 {% else %}
-                <img src="{{ profile.avatar.url }}" alt="user has uploaded a custom image">
+                <img src="{{ profile.avatar.url }}"  style="width:80%;" alt="user has uploaded a custom image">
                 {% endif %}
             </div>
         </div>
@@ -41,7 +41,7 @@
 </div>
 
 <div class="container">
-    <div class="row">
+    <div class="row white_div_margin">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
                 <!-- user bio -->
@@ -66,13 +66,13 @@
             <hr>
         </div>
     </div>
-    <div class="row">
+    <div class="row white_div_margin">
         <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>Reviews:</h3>
+            <h6>Reviews:</h6>
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                 {% for review in reviews %}
-                <div class="comments" style="padding: 10px;">
+                <div style="padding: 8px;">
                     <p class="font-weight-bold">
                         <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
                         {{ review.first_name }}
