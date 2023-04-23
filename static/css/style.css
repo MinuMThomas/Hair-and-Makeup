@@ -92,6 +92,14 @@ h6 {
     border: 0;
     width: auto;
 }
+#id_name, #id_email, #id_county, #id_profession {
+    width: 90%;
+}
+
+.white_div_margin {
+   margin-left: 0px; 
+   margin-right: auto;
+}
 
 /* Footer */
 
@@ -99,4 +107,14 @@ footer li {
     color: #357cc9;
 }
 
+
+@media only screen and (min-width:320px){
+    .profile_img {
+        width:30%
+    }
+    #id_bio {
+        width: 90%;
+    }
+    
+}
 
