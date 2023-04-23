@@ -1,6 +1,5 @@
 from django import forms
 from .models import Profile, Review
-from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 
 class ProfileForm(forms.ModelForm):
@@ -8,10 +7,6 @@ class ProfileForm(forms.ModelForm):
         model = Profile
         fields = ['name', 'profession', 'email', 'county', 'avatar', 'bio']
         prepopulated_fields = {'slug': 'user'}
-
-        widgets = {
-            'bio': SummernoteWidget(),
-                    }
 
 
 class ReviewForm(forms.ModelForm):
