@@ -50,9 +50,9 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'crispy_forms',
+    'django_extensions',
     'django_summernote',
     'beautyprof',
-    'django_extensions',
 ]
 
 SITE_ID = 1
