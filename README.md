@@ -4,10 +4,10 @@
 ![responsiviness](./readme_docs/)
 
 
-# About
+## About
 
 
-Live Site: [💻](https://pp4-beautysalon.herokuapp.com/)
+Live Site: [link](https://pp4-beautysalon.herokuapp.com/)
 ---
 <br>
 
@@ -21,7 +21,7 @@ This is a website to show Profiles of freelance hairstylist and beauticians. The
 ---
 User who can create a Profile and write about their profession and work availability as a freelance stylist or beautician.
 
-### Unregistered user
+###Unregistered user
 
 Unregistered user who can find freelance or mobile stylist/beauticians to work for their needs.
 
@@ -51,23 +51,25 @@ Homepage <strong><u>(Logged in) </u></strong>
 - As a user I want to delete my profile.
 
 
-##Register
+## Register
 
 - As a user I want to be able to Signup.
 
-##Login Page
+## Login Page
 
 - As a user I want to be able to login with username and password.
 
 
-##Logout Page
+## Logout Page
 
 - As a user I want to be able to logout.
  
 
-## User Stories - create profile
+## User Stories 
 
-  - create profile form: name, profession, place, email,bio, avatar
+### User Story: Create profile
+
+add profile form: name, profession, place, email,bio and avatar
 
 
 ### User Story: View Reviews
@@ -97,7 +99,7 @@ Homepage <strong><u>(Logged in) </u></strong>
 
 The list and screenshot about them can be found [here](readme_docs/).
 
-# Features to Implement in Future
+#Features to Implement in Future
 
 1. Login as user who can only add reviews.
 
@@ -107,6 +109,7 @@ The list and screenshot about them can be found [here](readme_docs/).
 
 
 # Bugs
+There is no bugs currently in the site
 
 
 # Design
@@ -134,13 +137,10 @@ The details to the design can be found [here]()
 - [Django](https://www.djangoproject.com/)
 Documentation for [here](https://docs.djangoproject.com/en/4.1/intro/)
 
-- [Jquery](https://jquery.com/) 
 
 - [Boostrap](https://getbootstrap.com/)
 
 - [Gunicorn](https://gunicorn.org/)
-
-- [CkEditor](https://ckeditor.com/)
 
 
 ## Database Host
@@ -396,85 +396,97 @@ This is reflected in the fact that all of the user stories below are working and
 The site was deployed via Heroku, and the live link can be found here - [Freelance Beauticians](https://pp4-beautysalon.herokuapp.com/)
 
 ### Project Deployment
-
 - To deploy my project on Heroku, I followed these steps:
-   -Signed up or logged in to Heroku.
-    -From the main dashboard, clicked "New" and selected "Create New App".
-    -Entered a unique name for the project and selected a suitable region, then clicked "Create App”.
+- Signed up or logged in to Heroku.
+- From the main dashboard, clicked "New" and selected "Create New App".
+- Entered a unique name for the project and selected a suitable region, then clicked "Create App”.
+- Create Database in ElephantSOL
 
-    -Create Database in ElephantSOL
-
-    Follow the steps to Create PostgreSQL database instance
-    -Login/signup to ElephantSQL.com to access your dashboard
-    -Click “Create New Instance”
-    -Select the Tiny Turtle (Free) plan
-    -Select “Select Region” 
-    -Select a data center near you
-    -Then click “Review”
-    -Check your details are correct and then click “Create instance” 
-    -Return to the ElephantSQL dashboard and click on the database instance name for this project
-    - That’s the database created
-    -In the URL section, click the copy icon to copy the database URL
-
-    -Go back to the Heroku dashboard open the Settings tab
-    -Add two config vars:
-    -DATABASE_URL, and for the value, copy in your database URL from ElephantSQL, no need to add quotation marks.
-    -SECRET_KEY containing your secret key.
-    - Added the secret key to the Heroku Config Vars as "SECRET_KEY" for the KEY value and the secret key value created as the VALUE.
-    -In the settings.py file within the Django app, imported Path from pathlib, os, and dj_database_url.
-    -Inserted the line if os.path.isfile("env.py"): import env to import the env.py file if it exists.
-    -Removed the insecure default secret key in the settings file and replaced it with SECRET_KEY = os.environ.get('SECRET_KEY').
-    -Replaced the databases section with DATABASES = {'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))}.
-    -Migrated the models to the new database connection in the terminal
-    -Added the Cloudinary libraries to the list of installed apps, with 'cloudinary_storage' above 'django.contrib.staticfiles' and     
-        'cloudinary' below it.
-    -In the settings.py file, added the STATIC files settings, including the url, storage path, directory path, root path, media url, and   
-        default file storage path.
-    -Linked the templates directory in Heroku with TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates').
-    -Changed the templates directory to TEMPLATES_DIR by adding 'DIRS': [TEMPLATES_DIR] in the settings.py file.
-    -Added Heroku to the ALLOWED_HOSTS list in the format "app-name.herokuapp.com".
-    -Created three new top-level folders in the code editor: media, static, and templates.
-    -Created a Procfile in the top-level directory and added the code web: gunicorn PROJECT_NAME.wsgi.
-    -Added the changed files, committed, and pushed to GitHub in the terminal.
-    -Navigated to the "Deploy" tab in Heroku and manually deployed the branch, watching the build logs for any errors.
-    -After completing the deployment steps, Heroku will build your app. Once the build process is complete, you will receive a message that 
-        your app has been successfully deployed, along with a link to the live site that you can visit.
+- Follow the steps to Create PostgreSQL database instance
+- Login/signup to ElephantSQL.com to access your dashboard
+- Click “Create New Instance”
+- Select the Tiny Turtle (Free) plan
+- Select “Select Region” 
+- Select a data center near you
+- Then click “Review”
+- Check your details are correct and then click “Create instance” 
+- Return to the ElephantSQL dashboard and click on the database instance name for this project
+- That’s the database created
+- In the URL section, click the copy icon to copy the database URL
+- Go back to the Heroku dashboard open the Settings tab add two config vars:
+- DATABASE_URL, and for the value, copy in your database URL from ElephantSQL, no need to add quotation 
+  marks.
+- SECRET_KEY containing your secret key.
+- Added the secret key to the Heroku Config Vars as "SECRET_KEY" for the KEY value and the secret key 
+  value created as the VALUE.
+- In the settings.py file within the Django app, imported Path from pathlib, os, and dj_database_url.
+- Inserted the line if os.path.isfile("env.py"): import env to import the env.py file if it exists.
+- Removed the insecure default secret key in the settings file and replaced it with SECRET_KEY = os.
+  environ.get('SECRET_KEY').
+- Replaced the databases section with DATABASES = {'default': dj_database_url.parse(os.environ.get
+  ("DATABASE_URL"))}.
+- Migrated the models to the new database connection in the terminal
+- Added the Cloudinary libraries to the list of installed apps, with 'cloudinary_storage' above 'django.  
+  contrib.staticfiles' and 'cloudinary' below it.
+- In the settings.py file, added the STATIC files settings, including the url, storage path, directory
+   path, root path, media url, and default file storage path.
+- Linked the templates directory in Heroku with TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates').
+- Changed the templates directory to TEMPLATES_DIR by adding 'DIRS': [TEMPLATES_DIR] in the settings.py
+  file.
+- Added Heroku to the ALLOWED_HOSTS list in the format "app-name.herokuapp.com".
+- Created three new top-level folders in the code editor: media, static, and templates.
+- Created a Procfile in the top-level directory and added the code web: gunicorn PROJECT_NAME.wsgi.
+- Added the changed files, committed, and pushed to GitHub in the terminal.
+- Navigated to the "Deploy" tab in Heroku and manually deployed the branch, watching the build logs for
+  any errors.
+- After completing the deployment steps, Heroku will build your app. Once the build process is complete, 
+  you will receive a message that your app has been successfully deployed, along with a link to the live site that you can visit.
 
 
 #### Forking the repository
 
-
-    To make a copy of a GitHub repository without affecting the original one, you can fork it. Here are the steps:
-    Log into your GitHub account or create one if you don't have one already.
-    Go to the original repository that you want to fork,
-    On the top right corner of the repository page, click the "Fork" button.
-    GitHub will create a copy of the repository in your own account, which you can view or modify without affecting the original repository.
+ - To make a copy of a GitHub repository without affecting the
+   original one, you can fork it. 
+ - Here are the steps:
+ - Log into your GitHub account or create one if you don’t
+   have one already.
+ - Go to the original repository that you want to fork,On the 
+   top right corner of the repository page, click the “Fork"
+   button.
+ - GitHub will create a copy of the repository in your own  
+   account, which you can view or modify without affecting
+   the original repository.
 
 
 #### Create a clone of this repository
 
-
-    To create a local copy of a GitHub repository, you can use the clone command. This allows you to have the same files and code as the original repository at a specific point in time. Here are the steps to follow:
-    Go to the repository on GitHub.
-    Click on the green "Code" button and select "Clone with HTTPS".
-    Copy the URL that is displayed.
-    Open your code editor and navigate to the location where you want to clone the repository.
-    In the terminal, type 'git clone' followed by the URL you copied from GitHub.
-    Press Enter and Git will clone the repository to your local machine.
+   - To create a local copy of a GitHub repository, you can
+    use the clone command. This allows you to have the same
+    files and code as the original repository at a specific
+    point in time.
+    Here are the steps to follow:
+   - Go to the repository on GitHub.
+    Click on the green "Code" button and select "Clone with
+    HTTPS”.
+   - Copy the URL that is displayed.
+   - Open your code editor and navigate to the location where
+   - you want to clone the repository.
+   - In the terminal, type 'git clone' followed by the URL you
+     copied from GitHub.
+   - Press Enter and Git will clone the repository to your
+    local machine.
 
 
 ## Credits
+- All Images used across the site were sourced from
+      [pexels](https://www.pexels.com)
+- Social media links were all sourced from Font Awesome.
 
-    -All Images used across the site were sourced from either pexels.com, 
-
-    - Social media links were all sourced from Font Awesome.
-
-    - I relied on the  Django walk through projects.
+- I relied on the  Django walk through projects mostly.
     Further research was done by building walk through projects available freely on youtube 
 
 ## Acknowledgements
 
 I would like to acknowledge the help and support given by collegues, our cohort lead Ivette and tutor assitant Rabecca, my mentor Chris Quinn, 
-
 
 
