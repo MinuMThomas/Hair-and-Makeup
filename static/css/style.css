@@ -12,9 +12,10 @@
 }
 header h2 span{
     font-family: 'Rubik Distressed', cursive;
-    font-weight: 600;
+    font-weight: 800;
     letter-spacing: 4px;
-    font-size: large;
+    font-size: xx-large;
+    color: #052a51;
     
 }
 
@@ -39,7 +40,8 @@ p a {
 h6 {
     font-weight: 800;
     font-size: medium;
-    font-family:  'Poppins', Arial, sans-serif
+    font-family:  'Poppins', Arial, sans-serif;
+    
 }
 
 .masthead-text {
@@ -104,7 +106,11 @@ h6 {
     border: 0;
     width: auto;
 }
-#id_name, #id_email, #id_county, #id_profession {
+#id_name, 
+#id_email, 
+#id_county, 
+#id_profession,
+#id_bio {
     width: 90%;
 }
 
