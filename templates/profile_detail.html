@@ -5,14 +5,14 @@
 
 <header class="masthead masthead-text">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div>
-            <h2>Profile of {{profile.name}}</h2>
-            <br>
-          </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div>
+                    <h2>Profile of {{profile.name}}</h2>
+                    <br>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 </header>
 <div class="masthead">
@@ -24,16 +24,17 @@
                 <p>{{profile.profession}}</p>
                 <p>{{profile.email}} </p>
                 <p>{{profile.county}} </p>
-           
+
                 <p>{{profile.created_on}} </p>
-               
+
             </div>
             <div class="d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in profile.avatar.url %}
-                <img src="https://res.cloudinary.com/mycodestudies/image/upload/v1682080266/makeup-transformed_dkltfn.jpg"  style="width:80%;"  alt="profile image">
+                <img src="https://res.cloudinary.com/mycodestudies/image/upload/v1682080266/makeup-transformed_dkltfn.jpg"
+                    style="width:80%;" alt="profile image">
                 {% else %}
-                <img src="{{ profile.avatar.url }}"  style="width:80%;" alt="user has uploaded a custom image">
+                <img src="{{ profile.avatar.url }}" style="width:80%;" alt="user has uploaded a custom image">
                 {% endif %}
             </div>
         </div>
@@ -49,16 +50,16 @@
                     {{profile.bio | safe}}
                 </p>
             </div>
-                <div class="row">
-                    <div class="col-1">
-                        {% with reviews.count as total_reviews %}
-                        <strong class="text-secondary"><i class="far fa-comments"></i>
-                            <!-- Our total_comments variable goes before the closing strong tag -->
-                            {{ total_reviews}}</strong>
-                        {% endwith %}
-                    </div>
+            <div class="row">
+                <div class="col-1">
+                    {% with reviews.count as total_reviews %}
+                    <strong class="text-secondary"><i class="far fa-comments"></i>
+                        <!-- Our total_comments variable goes before the closing strong tag -->
+                        {{ total_reviews}}</strong>
+                    {% endwith %}
                 </div>
-            
+            </div>
+
         </div>
     </div>
     <div class="row">
@@ -70,7 +71,7 @@
         <div class="col-md-8 card mb-4  mt-3 ">
             <h6>Reviews:</h6>
             <div class="card-body">
-                <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
+                <!-- We want a for loop inside the empty control tags to iterate through each review in reviews -->
                 {% for review in reviews %}
                 <div style="padding: 8px;">
                     <p class="font-weight-bold">
@@ -90,26 +91,19 @@
         </div>
         {% if user.is_authenticated %}
         {% if request.user != profile.user %}
-            <div class="col-md-4 card mb-4  mt-3 ">
-                <div class="card-body">
-                       <h3>Write a Review:</h3>
-                        <p>Posting as: {{ request.user }}</p>
-                        <form method="post" style="margin-top: 1.3em;">
-                            {{ review_form | crispy }}
-                            {% csrf_token %}
-                            <br>
-                            <button type="submit" class="btn btn-secondary">Submit</button>
-                        </form>
-
-                         
-                </div>
+        <div class="col-md-4 card mb-4  mt-3 ">
+            <div class="card-body">
+                <h3>Write a Review:</h3>
+                <p>Posting as: {{ request.user }}</p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ review_form | crispy }}
+                    {% csrf_token %}
+                    <br>
+                    <button type="submit" class="btn btn-secondary">Submit</button>
+                </form>
             </div>
-         
-           {% endif %}
-            {% endif %}
+        </div>
+        {% endif %}
+        {% endif %}
     </div>
- </div>
-</div>
-</div>
-
 {% endblock content %}
