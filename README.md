@@ -1,7 +1,7 @@
 # Freelance beauticians
 
 
-![responsiviness](./readme_docs/)
+![responsiviness](./images_README.md/Screenshot%202023-04-24%20at%2013.04.53.png)
 
 
 ## About
@@ -90,16 +90,23 @@ add profile form: name, profession, place, email,bio and avatar
 
 
 
-[flowchart](./readme_docs)
+[flowchart](./images_README.md/flowchart.png)
 
 
 
 
 # Features
 
-The list and screenshot about them can be found [here](readme_docs/).
+The list and screenshot about the site is here.
 
-#Features to Implement in Future
+- [Front_page](./images_README.md/frontpage.png)
+- [Navbar](./images_README.md/navbar_logo.png)
+- [MyProfile](./images_README.md/myprofile.png)
+- [SignIn](./images_README.md/sign_in.png)
+- [Register](./images_README.md/signUp.png)
+- [Signout](./images_README.md/signout.png)
+
+## Features to Implement in Future
 
 1. Login as user who can only add reviews.
 
@@ -112,14 +119,7 @@ The list and screenshot about them can be found [here](readme_docs/).
 There is no bugs currently in the site
 
 
-# Design
-
-The wireframes can be found [here]()
-
-The details to the design can be found [here]()
-
 # Technologies Used
-
 
 ## Languages
 
@@ -175,11 +175,7 @@ Documentation for [here](https://docs.djangoproject.com/en/4.1/intro/)
 
 # Validation
 
-The validation reports can be found [here](./readme_docs/)
-
-
-
-
+There was no error messages in validation report
 
 ## Responsiveness
 
@@ -204,7 +200,7 @@ The following features are present in all the pages.
 ## Navbar
 
 
-The features will be displayed according to the logged user, as marked in [features]
+The features will be displayed as Home,Register/Myprofile, and signin/logout
 
 
 | Feature       | Expected Action       | Result    |
@@ -235,8 +231,6 @@ The features will be displayed according to the logged user, as marked in [featu
 |---    |---    |---    |
 | Facebook Icon | Opens facebook in a new tab.     | Pass   |
 | Instagram Icon  | Opens instagram in a new tab.  | Pass   |
-
-
 
 
 
@@ -287,7 +281,6 @@ This page is for registered users.
 If user does not enter their information there is a place holder image that will be displayed by default.
 
 
-
 ## My profile
  
 This page will appear once user create the profile
@@ -322,11 +315,6 @@ I did manual testing for the development of the site.
 
 
 
-#### Testing Overview
-
-Testing was divided into different sections to ensure everything was tested individually with test cases developed for each area.
-
-
 #### Validator Testing
 All code files were validated using suitable validators for the specific language.
 HTML  & CSS code passed the validation.
@@ -334,18 +322,16 @@ HTML  & CSS code passed the validation.
 All validation screenshots are included below.
 
 All HTML validation returned without error
-![HTML Validation]()
-![CSS Validation]()
-![JS Validation]()
-
+[HTML Validation](images_README.md/html_validation.png)
+![CSS Validation](./images_README.md/cssVAlidation.png)
 
 #### Lighthouse Testing
 Below you can see the results of Googles Lighthouse Testing.
 
-![Lighthouse Testing]()
+![Lighthouse Testing](./images_README.md/Screenshot%202023-04-24%20at%2011.33.17.png)
 
 
-#### Python/JavaScript Testing
+#### Python Testing
 All Custom Python & JavaScript code was manually tested multiple times during and after development.
 This is reflected in the fact that all of the user stories below are working and have produced no errors in the terminal or the console.
 
@@ -363,7 +349,7 @@ This is reflected in the fact that all of the user stories below are working and
 * Heroku PostgreSQL
     * Heroku PostgreSQL was used as the database for this project during development and in production.
 * JavaScript
-    * Custom JavaScript was utilised to allow Users to close site messages.
+    * JavaScript from blog walkthrough project was utilised to allow Users to close site messages.
 * Bootstrap 5
     * Bootstrap was used for general layout and spacing requirements for the site.
 * Font Awesome
@@ -387,7 +373,6 @@ This is reflected in the fact that all of the user stories below are working and
 * The Cloudinary documentation was used.
 * The Code Institute reference material was used as a general reference 
 * The Django walk through project 'I think before I Blog'
-
 
 
 
