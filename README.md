@@ -21,7 +21,7 @@ This is a website to show Profiles of freelance hairstylist and beauticians. The
 ---
 User who can create a Profile and write about their profession and work availability as a freelance stylist or beautician.
 
-###Unregistered user
+### Unregistered user
 
 Unregistered user who can find freelance or mobile stylist/beauticians to work for their needs.
 
@@ -97,16 +97,17 @@ add profile form: name, profession, place, email,bio and avatar
 
 The list and screenshot about the site is here.
 
-- [Front_page](./images_README.md/frontpage.png)
-- [Navbar](./images_README.md/navbar_logo.png)
-- [MyProfile](./images_README.md/myprofile.png)
-- [SignIn](./images_README.md/sign_in.png)
-- [Register](./images_README.md/signUp.png)
-- [Signout](./images_README.md/signout.png)
+- Front page of the Website[Front_page](./images_README.md/frontpage.png)
+- Navigation bar [Navbar](./images_README.md/navbar_logo.png)
+- User view of their profile [MyProfile](./images_README.md/myprofile.png)
+- User signin page [SignIn](./images_README.md/sign_in.png)
+- User Registration page [Register](./images_README.md/signUp.png)
+- User signout page [Signout](./images_README.md/signout.png)
 
 ## Features to Implement in Future
 
-1. Login as user who can only add reviews.
+1. Login as user who can only add reviews. Created an app 
+   named <strong>beautypost</strong> in the project for this purpose.
 
 2. Registered user who can create profile will                    
     showcase their work too as posting images 
@@ -332,32 +333,6 @@ Below you can see the results of Googles Lighthouse Testing.
 #### Python Testing
 Python code was manually tested multiple times after development.
 
-
-## Bugs
-There is no unfixed bugs.
-
-
-## Technologies
-
-* Python
-* Django
-    * Django was used as the main python framework in the development of this project.
-* Heroku
-    * Was used as the cloud based platform to deploy the site on.
-* Heroku PostgreSQL
-    * Heroku PostgreSQL was used as the database for this project during development and in production.
-* JavaScript
-    * JavaScript from blog walkthrough project was utilised to allow Users to close site messages.
-* Bootstrap 5
-    * Bootstrap was used for general layout and spacing requirements for the site.
-* Font Awesome
-    * Was used for access to several icons for different sections where icons were appropriate.
-* CSS
-    * Custom css was written for a large number of areas on the site to implement custom styling and escape a bootstrap look and feel to the site.
-* Jinja/Django Templating
-    * Jinja/Django templating language was utilised to insert data from the database into the sites pages. It was also utilised to perform queries on different datasets.
-* HTML
-    * HTML was used as the base language for the templates created for the site.
 
 #### Resources Used
 
