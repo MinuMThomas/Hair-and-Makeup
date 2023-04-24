@@ -89,10 +89,8 @@ add profile form: name, profession, place, email,bio and avatar
 ## Flowcharts
 
 
-
-[flowchart](./images_README.md/flowchart.png)
-
-
+- Design Flow Chart [chart](./images_README.md/flowchart.png)
+- Data Base Diagram[DBDiagram](./erd.png)
 
 
 # Features
@@ -114,9 +112,9 @@ The list and screenshot about the site is here.
     showcase their work too as posting images 
 
 
-
 # Bugs
-There is no bugs currently in the site
+There is no bugs currently in the site, however when some of my collegues 
+login the site and got error page. [pagehere](./images_README.md/bug.png)
 
 
 # Technologies Used
