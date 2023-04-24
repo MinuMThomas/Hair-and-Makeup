@@ -65,11 +65,10 @@ Homepage <strong><u>(Logged in) </u></strong>
 - As a user I want to be able to logout.
  
 
-## User Stories 
 
 ### User Story: Create profile
 
-add profile form: name, profession, place, email,bio and avatar
+- As a user I want to add name, profession, place, email,bio and avatar in the profile.
 
 
 ### User Story: View Reviews
@@ -95,7 +94,19 @@ add profile form: name, profession, place, email,bio and avatar
 
 # Features
 
-The list and screenshot about the site is here.
+**Features planned:**
+* User Profile - Create, Read, Update and Delete.
+* Profiles - Users can read other users profiles.
+* Users can add review to profiles.
+* Users can login to their account.
+* Users can logout of their account.
+* Users need to be registered and logged in to access Profile creation and 
+  editing.
+* Responsive Design - the site needs to be fully responsive to cover the wide variety of devices.
+
+
+
+##### The list and screenshot about the site is here.
 
 - Front page of the Website[Front_page](./images_README.md/frontpage.png)
 - Navigation bar [Navbar](./images_README.md/navbar_logo.png)
@@ -180,24 +191,21 @@ There was no error messages in validation report
 
 The site had been test for the following devices:
 
-Mobile:  
-
-Tablet: 
-
-computer :
+Mobile,Tablet,computer
 
 The site had been test in Chrome and Firefox seeming all according to the design. 
 
 <br>
 
+
+# Testing
+
+### Testing Strategy
+I did manual testing for the development of the site.
+
 # Manual Testing
 
-
-The following features are present in all the pages.
-
-
 ## Navbar
-
 
 The features will be displayed as Home,Register/Myprofile, and signin/logout
 
@@ -292,28 +300,6 @@ This page will appear once user create the profile
 |Delete profile |user can delete profile                | Pass|
 
 
-
-## Features
-
-**Features planned:**
-* User Profile - Create, Read, Update and Delete.
-* Profiles - Users can read other users profiles.
-* Users can add review to profiles.
-* Users can login to their account.
-* Users can logout of their account.
-* Users need to be registered and logged in to access Profile creation and 
-  editing.
-* Responsive Design - the site needs to be fully responsive to cover the wide variety of devices.
-
-
-
-## Testing
-
-### Testing Strategy
-I did manual testing for the development of the site.
-
-
-
 #### Validator Testing
 All code files were validated using suitable validators for the specific language.
 HTML  & CSS code passed the validation.
@@ -321,31 +307,23 @@ HTML  & CSS code passed the validation.
 All validation screenshots are included below.
 
 All HTML validation returned without error
-[HTML Validation](images_README.md/html_validation.png)
-![CSS Validation](./images_README.md/cssVAlidation.png)
+- Sample of front page HTML validation [HTML Validation](images_README.md/validate_html.png)
+- CSS validation [CSS Validation](images_README.md/cssVAlidation.png)
 
 #### Lighthouse Testing
 Below you can see the results of Googles Lighthouse Testing.
 
-![Lighthouse Testing](./images_README.md/Screenshot%202023-04-24%20at%2011.33.17.png)
+- Light house Testing [Testing page](images_README.md/Screenshot%202023-04-24%20at%2011.33.17.png)
 
 
 #### Python Testing
-Python code was manually tested multiple times after development.
-
-
-#### Resources Used
-
-* The Django documentation was used extensively during development of this project
-* The Cloudinary documentation was used.
-* The Code Institute reference material was used as a general reference 
-* The Django walk through project 'I think before I Blog'
-
+- Python code was manually tested multiple times after development in CodeInstitute Python linter.
+  All python codes validated and no error detected.[python sample](images_README.md/validate_python.png)
 
 
 ## Deployment
 
-The site was deployed via Heroku, and the live link can be found here - [Freelance Beauticians](https://pp4-beautysalon.herokuapp.com/)
+- The site was deployed via Heroku, and the live link can be found here - [Freelance Beauticians](https://pp4-beautysalon.herokuapp.com/)
 
 ### Project Deployment
 - To deploy my project on Heroku, I followed these steps:
@@ -429,16 +407,26 @@ The site was deployed via Heroku, and the live link can be found here - [Freelan
     local machine.
 
 
+#### Resources Used
+
+* The Django documentation was used extensively during development of this project
+* The Cloudinary documentation was used.
+* The Code Institute reference material was used as a general reference 
+* The Django walk through project 'I think before I Blog'
+
+
+
 ## Credits
 - All Images used across the site were sourced from
       [pexels](https://www.pexels.com)
 - Social media links were all sourced from Font Awesome.
+- Logo created from free logomaker site [site](https://myfreelogomaker.com/)
 
 - I relied on the  Django walk through projects mostly.
     Further research was done by building walk through projects available freely on youtube 
 
 ## Acknowledgements
 
-I would like to acknowledge the help and support given by collegues, our cohort lead Ivette and tutor assitant Rabecca, my mentor Chris Quinn, 
+I would like to acknowledge the help and support given by collegues, our cohort lead Ivette and tutor assitant Rabecca, and my mentor Chris Quinn, 
 
 
