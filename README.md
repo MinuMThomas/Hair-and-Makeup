@@ -361,12 +361,6 @@ There is no unfixed bugs.
 * HTML
     * HTML was used as the base language for the templates created for the site.
 
-#### Packages Used
-
-* VS Code & Gitpod was used to develop the site
-* Git was utilised for version control and transferring files between the code editor and the repository
-* GitHub was utilised for storing the files for this project
-
 #### Resources Used
 
 * The Django documentation was used extensively during development of this project
