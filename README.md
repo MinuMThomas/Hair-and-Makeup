@@ -187,7 +187,7 @@ Tablet:
 
 computer :
 
-The site had been test in Chrome seeming all according to the design. In Firefox, the animation for the regions in the index come out a bit out of shape but still fully functional. In Internet Explorer all seems to work as the design.
+The site had been test in Chrome and Firefox seeming all according to the design. 
 
 <br>
 
@@ -332,11 +332,11 @@ Below you can see the results of Googles Lighthouse Testing.
 
 
 #### Python Testing
-All Custom Python & JavaScript code was manually tested multiple times during and after development.
-This is reflected in the fact that all of the user stories below are working and have produced no errors in the terminal or the console.
+Python code was manually tested multiple times after development.
 
 
 ## Bugs
+There is no unfixed bugs.
 
 
 ## Technologies
