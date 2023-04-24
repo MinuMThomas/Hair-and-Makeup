@@ -110,9 +110,12 @@ Homepage <strong><u>(Logged in) </u></strong>
 
 - Front page of the Website[Front_page](./images_README.md/frontpage.png)
 - Navigation bar [Navbar](./images_README.md/navbar_logo.png)
-- User view of their profile [MyProfile](./images_README.md/myprofile.png)
 - User signin page [SignIn](./images_README.md/sign_in.png)
 - User Registration page [Register](./images_README.md/signUp.png)
+- User create their profile [Create Profile](./images_README.md/create_profile.png)
+- User view of their profile [My Profile](./images_README.md/myprofile.png)
+- User edit their profile [Edit Profile](./images_README.md/edit_profile.png)
+- User delete their profile [Delete Profile](./images_README.md/delete_profile.png)
 - User signout page [Signout](./images_README.md/signout.png)
 
 ## Features to Implement in Future
