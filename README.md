@@ -426,7 +426,7 @@ Below you can see the results of Googles Lighthouse Testing.
 - Logo created from free logomaker site [site](https://myfreelogomaker.com/)
 
 - I relied on the  Django walk through projects mostly.
-    Further research was done by building walk through projects available freely on youtube 
+    Further research was done by building walk through projects available freely on youtube and especially pyplane [youtube page](https://www.youtube.com/playlist?list=PLgjw1dR712joFJvX_WKIuglbR1SNCeno1)
 
 ## Acknowledgements
 
